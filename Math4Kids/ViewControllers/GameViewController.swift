@@ -10,20 +10,45 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    // MARK: -
+    
+    enum GameMode {
+        case addition
+        case subtraction
+        case multiplication
+        case division
+        case shuffleAll
+        
+        var operatorString: String {
+            switch self {
+            case .addition: return "+"
+            case .subtraction: return "-"
+            case .multiplication: return "x"
+            case .division: return "/"
+            case .shuffleAll: return "?"
+            }
+        }
+    }
+    
+    
     
     // MARK: - Outlets
     
+    @IBOutlet weak var quitButton: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var answer1Label: UIButton!
-    @IBOutlet weak var answer2Label: UIButton!
-    @IBOutlet weak var answer3Label: UIButton!
-    @IBOutlet weak var answer4Label: UIButton!
+    @IBOutlet weak var answer1Button: UIButton!
+    @IBOutlet weak var answer2Button: UIButton!
+    @IBOutlet weak var answer3Button: UIButton!
+    @IBOutlet weak var answer4Button: UIButton!
     @IBOutlet weak var rightWrongLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
     
     
     // MARK: - Properties
+    
+    var gameModeTag = 0
+    var gameMode: GameMode = .addition
     
     var firstNumber = 0
     var secondNumber = 0
@@ -43,11 +68,48 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setGameMode()
+        configureUI()
+        
         scoreLabel.text = "0 / 0"
         updateQuestion()
         updateAnswers()
         
         answerArray = [answer1, answer2, answer3, answer4]
+    }
+    
+    
+    
+    // MARK: - Setup
+    
+    func setGameMode() {
+        switch gameModeTag {
+        case 0: gameMode = .addition
+        case 1: gameMode = .subtraction
+        case 2: gameMode = .multiplication
+        case 3: gameMode = .division
+        default: gameMode = .shuffleAll
+        }
+    }
+    
+    
+    func configureUI() {
+        view.backgroundColor = Colors.pink
+        
+        quitButton.titleLabel?.font = UIFont(name: FontNames.chalkduster, size: 15.0)
+        quitButton.tintColor = Colors.red
+        
+        questionLabel.font = UIFont(name: FontNames.chalkduster, size: 30.0)
+        questionLabel.textColor = Colors.aqua
+        
+        answer1Button.configureAppearance(withSize: 20.0)
+        answer2Button.configureAppearance(withSize: 20.0)
+        answer3Button.configureAppearance(withSize: 20.0)
+        answer4Button.configureAppearance(withSize: 20.0)
+        
+        rightWrongLabel.font = UIFont(name: FontNames.chalkduster, size: 30.0)
+        
+        scoreLabel.font = UIFont(name: FontNames.chalkduster, size: 17.0)
     }
     
     
@@ -86,7 +148,7 @@ class GameViewController: UIViewController {
         firstNumber = Int.random(in: 1...10)
         secondNumber = Int.random(in: 1...10)
         correctAnswer = firstNumber + secondNumber
-        questionLabel.text = "What is \(firstNumber) + \(secondNumber)?"
+        questionLabel.text = "What is \(firstNumber) \(gameMode.operatorString) \(secondNumber)?"
     }
     
     
@@ -111,10 +173,10 @@ class GameViewController: UIViewController {
         
         answerArray = answers
         
-        answer1Label.setTitle(String(answer1), for: .normal)
-        answer2Label.setTitle(String(answer2), for: .normal)
-        answer3Label.setTitle(String(answer3), for: .normal)
-        answer4Label.setTitle(String(answer4), for: .normal)
+        answer1Button.setTitle(String(answer1), for: .normal)
+        answer2Button.setTitle(String(answer2), for: .normal)
+        answer3Button.setTitle(String(answer3), for: .normal)
+        answer4Button.setTitle(String(answer4), for: .normal)
     }
     
     

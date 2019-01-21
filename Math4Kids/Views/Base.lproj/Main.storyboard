@@ -13,7 +13,7 @@
         <!--Start Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartScreenViewController" customModule="Math4Kids" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="StartScreenViewController" customModule="Math4Kids" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,54 +23,122 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="M9p-sa-1XV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
-                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rs6-ke-EKA">
-                                <rect key="frame" x="40" y="308.5" width="295" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7pO-cn-OnQ">
+                                <rect key="frame" x="40" y="181" width="295" height="305"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXa-1y-y8H">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="a7M-3P-f8s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rs6-ke-EKA">
+                                        <rect key="frame" x="0.0" y="35" width="295" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="sBm-M3-Vcx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Addition"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5s3-Bp-T0c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLb-vQ-TXk">
+                                        <rect key="frame" x="0.0" y="90" width="295" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="d4e-Uv-NNm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Subtraction"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7v-5F-1Ov"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXp-4o-D9H">
+                                        <rect key="frame" x="0.0" y="145" width="295" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ujh-Hi-iiQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Multiplication"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJr-aK-6eQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvJ-Hp-tZT">
+                                        <rect key="frame" x="0.0" y="200" width="295" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="tv6-t5-58K"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Division"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mLr-tC-Wg5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLF-IC-mgz">
+                                        <rect key="frame" x="0.0" y="255" width="295" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0AN-Nl-jZj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Shuffle All"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtX-fo-rOr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="sBm-M3-Vcx"/>
+                                    <constraint firstAttribute="trailing" secondItem="BvJ-Hp-tZT" secondAttribute="trailing" id="7HC-dC-fmZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="XXp-4o-D9H" secondAttribute="trailing" id="8RB-4W-Npb"/>
+                                    <constraint firstItem="kLF-IC-mgz" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="AXX-5I-js7"/>
+                                    <constraint firstAttribute="trailing" secondItem="SLb-vQ-TXk" secondAttribute="trailing" id="JIf-an-mYz"/>
+                                    <constraint firstAttribute="trailing" secondItem="kLF-IC-mgz" secondAttribute="trailing" id="LxY-Ea-oOn"/>
+                                    <constraint firstAttribute="trailing" secondItem="WXa-1y-y8H" secondAttribute="trailing" id="RaU-Xx-ykC"/>
+                                    <constraint firstItem="rs6-ke-EKA" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="XDM-DJ-Cmo"/>
+                                    <constraint firstAttribute="trailing" secondItem="rs6-ke-EKA" secondAttribute="trailing" id="b74-dK-LTr"/>
+                                    <constraint firstItem="XXp-4o-D9H" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="bbg-j8-gzP"/>
+                                    <constraint firstItem="BvJ-Hp-tZT" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="eyL-nm-OpF"/>
+                                    <constraint firstItem="WXa-1y-y8H" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="s7n-JB-cBd"/>
+                                    <constraint firstItem="SLb-vQ-TXk" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="tmz-1y-0Lh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Play"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5s3-Bp-T0c"/>
-                                    <segue destination="8Mz-iI-yk9" kind="show" identifier="playSegue" id="MUU-Ek-VIa">
-                                        <segue key="commit" inheritsFrom="parent" id="SSD-5O-uy8"/>
-                                        <segue key="preview" inheritsFrom="commit" id="9la-yG-pIA"/>
-                                    </segue>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.78431372549019607" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rs6-ke-EKA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="8Ir-ee-I1F"/>
+                            <constraint firstItem="7pO-cn-OnQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5hq-5d-qq0"/>
+                            <constraint firstAttribute="trailing" secondItem="7pO-cn-OnQ" secondAttribute="trailing" constant="40" id="6fT-r8-Mhc"/>
                             <constraint firstItem="EYz-Oh-fjg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T2M-Ax-OhN"/>
+                            <constraint firstItem="7pO-cn-OnQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="UBR-4b-1zu"/>
                             <constraint firstItem="EYz-Oh-fjg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jBN-v7-Eby"/>
-                            <constraint firstItem="rs6-ke-EKA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pcz-L8-t10"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rs6-ke-EKA" secondAttribute="trailing" constant="40" id="wPQ-59-JQT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYz-Oh-fjg" secondAttribute="trailing" id="wc7-fB-iQG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="additionButton" destination="rs6-ke-EKA" id="1zQ-D1-tzW"/>
+                        <outlet property="divisionButton" destination="BvJ-Hp-tZT" id="lQ0-mS-8ac"/>
+                        <outlet property="multiplicationButton" destination="XXp-4o-D9H" id="exk-3N-xXu"/>
+                        <outlet property="playLabel" destination="WXa-1y-y8H" id="pxv-bU-eAP"/>
+                        <outlet property="shuffleAllButton" destination="kLF-IC-mgz" id="oOG-Aj-QIi"/>
+                        <outlet property="subtractionButton" destination="SLb-vQ-TXk" id="nJj-BJ-3aJ"/>
+                        <outlet property="titleLabel" destination="EYz-Oh-fjg" id="xgK-2F-NdR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63" y="-83"/>
+            <point key="canvasLocation" x="175" y="-136"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="UZG-gp-pQG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QlK-6Q-Wv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="8Mz-iI-yk9" customClass="GameViewController" customModule="Math4Kids" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Mz-iI-yk9" customClass="GameViewController" customModule="Math4Kids" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HQ6-ct-pA4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,8 +151,8 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kub-eo-j9C">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
-                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
-                                                <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -103,72 +171,44 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uJ-vb-1xy">
                                                         <rect key="frame" x="0.0" y="0.0" width="295" height="40"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="L5j-EX-pQI"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Answer 1"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="15"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="tapAnswer:" destination="8Mz-iI-yk9" eventType="touchUpInside" id="oQB-hP-YV0"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-ZN-Ilq">
                                                         <rect key="frame" x="0.0" y="52.5" width="295" height="40"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="2JS-56-MqK"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Answer 2"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="15"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="tapAnswer:" destination="8Mz-iI-yk9" eventType="touchUpInside" id="PKW-OL-A43"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkr-JV-utN">
                                                         <rect key="frame" x="0.0" y="105.5" width="295" height="40"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="rak-Eh-pXt"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Answer 3"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="15"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="tapAnswer:" destination="8Mz-iI-yk9" eventType="touchUpInside" id="jZh-2Q-lQE"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cke-Tt-flq">
                                                         <rect key="frame" x="0.0" y="158" width="295" height="40"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="ZqL-Sw-rnC"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Answer 4"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="15"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="tapAnswer:" destination="8Mz-iI-yk9" eventType="touchUpInside" id="XzT-qM-uR8"/>
                                                         </connections>
@@ -178,7 +218,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="cGR-3o-GHc"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -187,7 +227,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="yrb-GN-0dd"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -218,20 +258,17 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlj-ny-cCm">
-                                <rect key="frame" x="10" y="30" width="35" height="30"/>
+                                <rect key="frame" x="10" y="30" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2OG-ci-M8S"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
-                                <state key="normal" title="Quit">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Quit"/>
                                 <connections>
                                     <action selector="quit:" destination="8Mz-iI-yk9" eventType="touchUpInside" id="FFD-0n-3UN"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.78431372549019607" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VeS-nq-ZmQ" firstAttribute="trailing" secondItem="6p1-gg-6mn" secondAttribute="trailing" id="IqS-oq-YJ9"/>
                             <constraint firstItem="Mlj-ny-cCm" firstAttribute="top" secondItem="VeS-nq-ZmQ" secondAttribute="top" constant="10" id="M6x-t7-nVs"/>
@@ -243,20 +280,19 @@
                         <viewLayoutGuide key="safeArea" id="VeS-nq-ZmQ"/>
                     </view>
                     <connections>
-                        <outlet property="answer1Label" destination="8uJ-vb-1xy" id="7lH-ya-grx"/>
-                        <outlet property="answer2Label" destination="Sme-ZN-Ilq" id="SDs-L4-Odb"/>
-                        <outlet property="answer3Label" destination="mkr-JV-utN" id="X9m-oC-ygP"/>
-                        <outlet property="answer4Label" destination="Cke-Tt-flq" id="OtG-MY-Mo8"/>
+                        <outlet property="answer1Button" destination="8uJ-vb-1xy" id="7lH-ya-grx"/>
+                        <outlet property="answer2Button" destination="Sme-ZN-Ilq" id="SDs-L4-Odb"/>
+                        <outlet property="answer3Button" destination="mkr-JV-utN" id="X9m-oC-ygP"/>
+                        <outlet property="answer4Button" destination="Cke-Tt-flq" id="OtG-MY-Mo8"/>
                         <outlet property="questionLabel" destination="Kub-eo-j9C" id="Aw7-WZ-Uug"/>
+                        <outlet property="quitButton" destination="Mlj-ny-cCm" id="gpq-QI-s6J"/>
                         <outlet property="rightWrongLabel" destination="LAs-ma-rla" id="VRZ-hp-qO7"/>
                         <outlet property="scoreLabel" destination="KXh-fC-bUt" id="aij-1e-9xQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QlK-6Q-Wv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937" y="-83"/>
+            <point key="canvasLocation" x="841" y="-136"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="MUU-Ek-VIa"/>
-    </inferredMetricsTieBreakers>
 </document>
