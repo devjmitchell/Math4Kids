@@ -21,10 +21,10 @@ class GameViewController: UIViewController {
         
         var operatorString: String {
             switch self {
-            case .addition: return "+"
-            case .subtraction: return "-"
-            case .multiplication: return "x"
-            case .division: return "/"
+            case .addition: return "+" // ➕
+            case .subtraction: return "-" // ➖
+            case .multiplication: return "x" // ✖️
+            case .division: return "/" // ➗
             case .shuffleAll: return "?"
             }
         }
@@ -147,8 +147,33 @@ class GameViewController: UIViewController {
     func updateQuestion() {
         firstNumber = Int.random(in: 1...10)
         secondNumber = Int.random(in: 1...10)
-        correctAnswer = firstNumber + secondNumber
-        questionLabel.text = "What is \(firstNumber) \(gameMode.operatorString) \(secondNumber)?"
+        
+        switch gameMode {
+        case .addition, .multiplication: break
+        case .subtraction:
+            if firstNumber < secondNumber {
+                swap(&firstNumber, &secondNumber)
+            }
+        case .division:
+            firstNumber *= secondNumber
+        case .shuffleAll:
+            // TODO: Figure out how to shuffle gameModes
+            break
+        }
+        
+        switch gameMode {
+        case .addition: correctAnswer = firstNumber + secondNumber
+        case .subtraction: correctAnswer = firstNumber - secondNumber
+        case .multiplication: correctAnswer = firstNumber * secondNumber
+        case .division: correctAnswer = firstNumber / secondNumber
+        case .shuffleAll: break
+        }
+        
+        questionLabel.text = """
+        What is...
+        
+        \(firstNumber) \(gameMode.operatorString) \(secondNumber)
+        """
     }
     
     
