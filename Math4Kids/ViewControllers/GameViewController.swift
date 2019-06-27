@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
     
     // MARK: -
     
@@ -94,8 +94,6 @@ class GameViewController: UIViewController {
     
     
     func configureUI() {
-        view.backgroundColor = Colors.pink
-        
         quitButton.titleLabel?.font = UIFont(name: FontNames.chalkduster, size: 15.0)
         quitButton.tintColor = Colors.red
         

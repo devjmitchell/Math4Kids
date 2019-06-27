@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartScreenViewController: UIViewController {
+class StartScreenViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playLabel: UILabel!
@@ -26,10 +26,7 @@ class StartScreenViewController: UIViewController {
     }
     
     
-    func configureUI() {
-        
-        view.backgroundColor = Colors.pink
-        
+    func configureUI() {        
         titleLabel.font = UIFont(name: FontNames.chalkduster, size: 30.0)
         titleLabel.textColor = Colors.red
         
