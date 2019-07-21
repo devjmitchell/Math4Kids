@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,122 +18,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Math 4 Kids" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYz-Oh-fjg">
-                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="M9p-sa-1XV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYz-Oh-fjg">
+                                <rect key="frame" x="16" y="36" width="343" height="167"/>
+                                <string key="text">Math
+4
+Kids</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7pO-cn-OnQ">
-                                <rect key="frame" x="40" y="181" width="295" height="305"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XDU-0c-Sbj" userLabel="Buttons Stack View">
+                                <rect key="frame" x="16" y="219" width="343" height="432"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXa-1y-y8H">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="a7M-3P-f8s"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rs6-ke-EKA">
-                                        <rect key="frame" x="0.0" y="35" width="295" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="sBm-M3-Vcx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Addition"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qzH-dw-ia0" userLabel="Add/Subtract Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="133"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oF-AC-0pI">
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="133"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal" title="+"/>
+                                                <connections>
+                                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cfV-Il-SG8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-Ka-aZ7">
+                                                <rect key="frame" x="179.5" y="0.0" width="163.5" height="133"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal" title="-"/>
+                                                <connections>
+                                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NeQ-hu-g5b"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QmG-Ly-p1U" userLabel="Multiply/Divide Stack View">
+                                        <rect key="frame" x="0.0" y="149" width="343" height="133.5"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0H6-Vn-2Vk">
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="133.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal" title="x"/>
+                                                <connections>
+                                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dGO-ch-1XS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qe-id-UnV">
+                                                <rect key="frame" x="179.5" y="0.0" width="163.5" height="133.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal" title="÷"/>
+                                                <connections>
+                                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZmM-Lz-yhh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbI-ek-j3p">
+                                        <rect key="frame" x="0.0" y="298.5" width="343" height="133.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Random"/>
                                         <connections>
-                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5s3-Bp-T0c"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLb-vQ-TXk">
-                                        <rect key="frame" x="0.0" y="90" width="295" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="d4e-Uv-NNm"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Subtraction"/>
-                                        <connections>
-                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7v-5F-1Ov"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXp-4o-D9H">
-                                        <rect key="frame" x="0.0" y="145" width="295" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="ujh-Hi-iiQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Multiplication"/>
-                                        <connections>
-                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJr-aK-6eQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvJ-Hp-tZT">
-                                        <rect key="frame" x="0.0" y="200" width="295" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="tv6-t5-58K"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Division"/>
-                                        <connections>
-                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mLr-tC-Wg5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLF-IC-mgz">
-                                        <rect key="frame" x="0.0" y="255" width="295" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="0AN-Nl-jZj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Shuffle All"/>
-                                        <connections>
-                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtX-fo-rOr"/>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gzb-dw-DYM"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="BvJ-Hp-tZT" secondAttribute="trailing" id="7HC-dC-fmZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="XXp-4o-D9H" secondAttribute="trailing" id="8RB-4W-Npb"/>
-                                    <constraint firstItem="kLF-IC-mgz" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="AXX-5I-js7"/>
-                                    <constraint firstAttribute="trailing" secondItem="SLb-vQ-TXk" secondAttribute="trailing" id="JIf-an-mYz"/>
-                                    <constraint firstAttribute="trailing" secondItem="kLF-IC-mgz" secondAttribute="trailing" id="LxY-Ea-oOn"/>
-                                    <constraint firstAttribute="trailing" secondItem="WXa-1y-y8H" secondAttribute="trailing" id="RaU-Xx-ykC"/>
-                                    <constraint firstItem="rs6-ke-EKA" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="XDM-DJ-Cmo"/>
-                                    <constraint firstAttribute="trailing" secondItem="rs6-ke-EKA" secondAttribute="trailing" id="b74-dK-LTr"/>
-                                    <constraint firstItem="XXp-4o-D9H" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="bbg-j8-gzP"/>
-                                    <constraint firstItem="BvJ-Hp-tZT" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="eyL-nm-OpF"/>
-                                    <constraint firstItem="WXa-1y-y8H" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="s7n-JB-cBd"/>
-                                    <constraint firstItem="SLb-vQ-TXk" firstAttribute="leading" secondItem="7pO-cn-OnQ" secondAttribute="leading" id="tmz-1y-0Lh"/>
+                                    <constraint firstItem="QmG-Ly-p1U" firstAttribute="centerX" secondItem="XDU-0c-Sbj" secondAttribute="centerX" id="F92-L0-p4A"/>
+                                    <constraint firstItem="qzH-dw-ia0" firstAttribute="centerX" secondItem="XDU-0c-Sbj" secondAttribute="centerX" id="HlY-MG-8fF"/>
+                                    <constraint firstItem="KbI-ek-j3p" firstAttribute="centerX" secondItem="XDU-0c-Sbj" secondAttribute="centerX" id="Kub-wG-16A"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="7pO-cn-OnQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5hq-5d-qq0"/>
-                            <constraint firstAttribute="trailing" secondItem="7pO-cn-OnQ" secondAttribute="trailing" constant="40" id="6fT-r8-Mhc"/>
-                            <constraint firstItem="EYz-Oh-fjg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T2M-Ax-OhN"/>
-                            <constraint firstItem="7pO-cn-OnQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="UBR-4b-1zu"/>
-                            <constraint firstItem="EYz-Oh-fjg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jBN-v7-Eby"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYz-Oh-fjg" secondAttribute="trailing" id="wc7-fB-iQG"/>
+                            <constraint firstItem="EYz-Oh-fjg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HX4-F4-Nek"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYz-Oh-fjg" secondAttribute="trailing" constant="16" id="bcu-gK-5zo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XDU-0c-Sbj" secondAttribute="bottom" constant="16" id="cN3-C5-BdM"/>
+                            <constraint firstItem="EYz-Oh-fjg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="gL0-9G-y6f"/>
+                            <constraint firstItem="XDU-0c-Sbj" firstAttribute="top" secondItem="EYz-Oh-fjg" secondAttribute="bottom" constant="16" id="gRX-Tb-0Pc"/>
+                            <constraint firstItem="EYz-Oh-fjg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="mLc-7P-7Xd"/>
+                            <constraint firstItem="XDU-0c-Sbj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uFf-FH-kp4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XDU-0c-Sbj" secondAttribute="trailing" constant="16" id="uJM-Ym-TqT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="additionButton" destination="rs6-ke-EKA" id="1zQ-D1-tzW"/>
-                        <outlet property="divisionButton" destination="BvJ-Hp-tZT" id="lQ0-mS-8ac"/>
-                        <outlet property="multiplicationButton" destination="XXp-4o-D9H" id="exk-3N-xXu"/>
-                        <outlet property="playLabel" destination="WXa-1y-y8H" id="pxv-bU-eAP"/>
-                        <outlet property="shuffleAllButton" destination="kLF-IC-mgz" id="oOG-Aj-QIi"/>
-                        <outlet property="subtractionButton" destination="SLb-vQ-TXk" id="nJj-BJ-3aJ"/>
+                        <outlet property="additionButton" destination="9oF-AC-0pI" id="JLn-nc-hUb"/>
+                        <outlet property="divisionButton" destination="3qe-id-UnV" id="OGj-jP-AdW"/>
+                        <outlet property="multiplicationButton" destination="0H6-Vn-2Vk" id="61m-VK-lpF"/>
+                        <outlet property="randomButton" destination="KbI-ek-j3p" id="OCN-3c-6zw"/>
+                        <outlet property="subtractionButton" destination="Kpe-Ka-aZ7" id="JZZ-Eq-vqs"/>
                         <outlet property="titleLabel" destination="EYz-Oh-fjg" id="xgK-2F-NdR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="-136"/>
+            <point key="canvasLocation" x="173.59999999999999" y="-136.28185907046478"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="UZG-gp-pQG">

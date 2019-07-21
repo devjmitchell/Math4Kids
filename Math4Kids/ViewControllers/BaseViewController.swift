@@ -8,11 +8,9 @@
 
 import UIKit
 
-// TODO: Put StartScreenVC and GameVC into navigation stack / embed in navigation controller?
 class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setGradientBackground(topColor: .purple, bottomColor: .orange)
-//        navigationController?.isNavigationBarHidden = true
+        view.setGradientBackground(topColor: Colors.backgroundGradientTop, bottomColor: Colors.backgroundGradientBottom)
     }
 }

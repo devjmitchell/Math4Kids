@@ -8,29 +8,22 @@
 
 import UIKit
 
-class GameViewController: BaseViewController {
+enum GameMode: CaseIterable {
+    case addition
+    case subtraction
+    case multiplication
+    case division
     
-    // MARK: -
-    
-    enum GameMode {
-        case addition
-        case subtraction
-        case multiplication
-        case division
-        case shuffleAll
-        
-        var operatorString: String {
-            switch self {
-            case .addition: return "+" // ➕
-            case .subtraction: return "-" // ➖
-            case .multiplication: return "x" // ✖️
-            case .division: return "/" // ➗
-            case .shuffleAll: return "?"
-            }
+    var operatorString: String {
+        switch self {
+        case .addition: return "+" // ➕
+        case .subtraction: return "-" // ➖
+        case .multiplication: return "x" // ✖️
+        case .division: return "÷" // ➗
         }
     }
-    
-    
+}
+class GameViewController: BaseViewController {
     
     // MARK: - Outlets
     
@@ -47,7 +40,6 @@ class GameViewController: BaseViewController {
     
     // MARK: - Properties
     
-    var gameModeTag = 0
     var gameMode: GameMode = .addition
     
     var firstNumber = 0
@@ -68,7 +60,6 @@ class GameViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setGameMode()
         configureUI()
         
         scoreLabel.text = "0 / 0"
@@ -81,17 +72,6 @@ class GameViewController: BaseViewController {
     
     
     // MARK: - Setup
-    
-    func setGameMode() {
-        switch gameModeTag {
-        case 0: gameMode = .addition
-        case 1: gameMode = .subtraction
-        case 2: gameMode = .multiplication
-        case 3: gameMode = .division
-        default: gameMode = .shuffleAll
-        }
-    }
-    
     
     func configureUI() {
         quitButton.titleLabel?.font = UIFont(name: FontNames.chalkduster, size: 15.0)
@@ -147,24 +127,21 @@ class GameViewController: BaseViewController {
         secondNumber = Int.random(in: 1...10)
         
         switch gameMode {
-        case .addition, .multiplication: break
+        case .addition:
+            correctAnswer = firstNumber + secondNumber
+            
         case .subtraction:
             if firstNumber < secondNumber {
                 swap(&firstNumber, &secondNumber)
             }
+            correctAnswer = firstNumber - secondNumber
+            
+        case .multiplication:
+            correctAnswer = firstNumber * secondNumber
+            
         case .division:
             firstNumber *= secondNumber
-        case .shuffleAll:
-            // TODO: Figure out how to shuffle gameModes
-            break
-        }
-        
-        switch gameMode {
-        case .addition: correctAnswer = firstNumber + secondNumber
-        case .subtraction: correctAnswer = firstNumber - secondNumber
-        case .multiplication: correctAnswer = firstNumber * secondNumber
-        case .division: correctAnswer = firstNumber / secondNumber
-        case .shuffleAll: break
+            correctAnswer = firstNumber / secondNumber
         }
         
         questionLabel.text = """

@@ -21,6 +21,12 @@ struct Colors {
     /// Used for button text
     static let white = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
     
+    
+    static let backgroundGradientTop = UIColor(named: "backgroundGradientTop")!
+    static let backgroundGradientBottom = UIColor(named: "backgroundGradientBottom")!
+    
+    static let buttonGradientTop = UIColor(named: "buttonGradientTop")!
+    static let buttonGradientBottom = UIColor(named: "buttonGradientBottom")!
 }
 
 struct FontNames {

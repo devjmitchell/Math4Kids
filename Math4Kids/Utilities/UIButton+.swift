@@ -12,10 +12,16 @@ extension UIButton {
     
     func configureAppearance(withSize fontSize: CGFloat) {
         self.titleLabel?.font = UIFont(name: FontNames.chalkduster, size: fontSize)
-        self.tintColor = Colors.white
-        self.backgroundColor = Colors.aqua
+//        self.titleLabel?.font = UIFont(name: FontNames.chalkduster, size: 80)
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        self.tintColor = .white
+        
+        
+        self.setGradientBackground(topColor: Colors.buttonGradientTop, bottomColor: Colors.buttonGradientBottom)
         
         // This gives a rounded button
-        layer.cornerRadius = frame.size.height / 2
+        self.layer.cornerRadius = self.frame.height / 2
+        self.clipsToBounds = true
     }
 }
