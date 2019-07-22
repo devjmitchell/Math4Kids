@@ -23,23 +23,27 @@ enum GameMode: CaseIterable {
         }
     }
 }
+
+
 class GameViewController: BaseViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var quitButton: UIButton!
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var answer1Button: UIButton!
-    @IBOutlet weak var answer2Button: UIButton!
-    @IBOutlet weak var answer3Button: UIButton!
-    @IBOutlet weak var answer4Button: UIButton!
-    @IBOutlet weak var rightWrongLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet var beginEndLabel: UILabel!
+    @IBOutlet var endOKButton: CustomButton!
+    @IBOutlet var quitButton: UIButton!
+    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var answer1Button: UIButton!
+    @IBOutlet var answer2Button: UIButton!
+    @IBOutlet var answer3Button: UIButton!
+    @IBOutlet var answer4Button: UIButton!
+    @IBOutlet var scoreLabel: UILabel!
     
     
     
     // MARK: - Properties
     
+    var isRandomMode = false
     var gameMode: GameMode = .addition
     
     var firstNumber = 0
@@ -60,39 +64,105 @@ class GameViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUI()
+        setupUI()
+    }
+    
+    
+    
+    // MARK: - Setup & Tear Down
+    
+    func setupUI() {
+        beginEndLabel.font = UIFont(name: FontNames.chalkduster, size: 50.0)
+        beginEndLabel.adjustsFontSizeToFitWidth = true
+        beginEndLabel.textColor = .white
+        
+        endOKButton.isHidden = true
+        endOKButton.titleLabel?.font = UIFont(name: FontNames.chalkduster, size: 50.0)
+        endOKButton.transform = CGAffineTransform(translationX: 0, y: 200)
+        endOKButton.layer.cornerRadius = 25
+        
+        hideGameButtons()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.showGame()
+        }
+    }
+    
+    
+    func hideGameButtons() {
+        quitButton.isHidden = true
+        questionLabel.isHidden = true
+        answer1Button.isHidden = true
+        answer2Button.isHidden = true
+        answer3Button.isHidden = true
+        answer4Button.isHidden = true
+        scoreLabel.isHidden = true
+    }
+    
+    
+    func showGame() {
+        beginEndLabel.isHidden = true
+        
+        quitButton.isHidden = false
+        questionLabel.isHidden = false
+        answer1Button.isHidden = false
+        answer2Button.isHidden = false
+        answer3Button.isHidden = false
+        answer4Button.isHidden = false
+        scoreLabel.isHidden = false
+        
+        quitButton.titleLabel?.font = UIFont(name: FontNames.chalkduster, size: 20.0)
+        quitButton.tintColor = .white
+        
+        questionLabel.font = UIFont(name: FontNames.chalkduster, size: 80.0)
+        questionLabel.adjustsFontSizeToFitWidth = true
+        questionLabel.textColor = .white
+        
+        scoreLabel.font = UIFont(name: FontNames.chalkduster, size: 20.0)
+        scoreLabel.textColor = .white
         
         scoreLabel.text = "0 / 0"
         updateQuestion()
         updateAnswers()
         
         answerArray = [answer1, answer2, answer3, answer4]
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 60) {
+            self.hideGameButtons()
+            self.endGame()
+        }
+    }
+    
+    
+    func endGame() {
+//        beginEndLabel.text = """
+//        You got
+//        \(totalCorrect) right
+//        out of
+//        \(totalAnswered) total questions!
+//        """
+        beginEndLabel.text = """
+        You got:
+        \(totalCorrect) right
+        \(totalAnswered - totalCorrect) wrong
+        """
+        
+        beginEndLabel.isHidden = false
+        endOKButton.isHidden = false
+//        endOKButton.isEnabled = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            self.endOKButton.isHidden = false
+//            self.endOKButton.isEnabled = true
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [], animations: {
+                self.endOKButton.transform = .identity
+            })
+        }
     }
     
     
     
-    // MARK: - Setup
-    
-    func configureUI() {
-        quitButton.titleLabel?.font = UIFont(name: FontNames.chalkduster, size: 15.0)
-        quitButton.tintColor = Colors.red
-        
-        questionLabel.font = UIFont(name: FontNames.chalkduster, size: 30.0)
-        questionLabel.textColor = Colors.aqua
-        
-        answer1Button.configureAppearance(withSize: 20.0)
-        answer2Button.configureAppearance(withSize: 20.0)
-        answer3Button.configureAppearance(withSize: 20.0)
-        answer4Button.configureAppearance(withSize: 20.0)
-        
-        rightWrongLabel.font = UIFont(name: FontNames.chalkduster, size: 30.0)
-        
-        scoreLabel.font = UIFont(name: FontNames.chalkduster, size: 17.0)
-    }
-    
-    
-    
-    // MARK: - Methods
+    // MARK: - Game Logic Methods
     
     func check(_ selectedAnswer: Int) {
         let isCorrect = correctAnswer == selectedAnswer
@@ -107,16 +177,26 @@ class GameViewController: BaseViewController {
         
         totalAnswered += 1
         
-        let darkGreen = UIColor(red:0.00, green:0.39, blue:0.00, alpha:1.0)
         let rightWrongText = isCorrect ? "Right!" : "Wrong!"
-        let rightWrongColor: UIColor = isCorrect ? darkGreen : .red
+        let rightWrongColor: UIColor = isCorrect ? Colors.rightLabelColor : Colors.wrongLabelColor
         
-        rightWrongLabel.text = rightWrongText
+        
+        let rightWrongLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        rightWrongLabel.textAlignment = .center
         rightWrongLabel.textColor = rightWrongColor
+        rightWrongLabel.font = UIFont(name: FontNames.chalkduster, size: 80.0)
+        rightWrongLabel.adjustsFontSizeToFitWidth = true
+        rightWrongLabel.text = rightWrongText
+        rightWrongLabel.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        view.addSubview(rightWrongLabel)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.rightWrongLabel.text = ""
+        UIView.animate(withDuration: 0.5, animations: {
+            rightWrongLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+            rightWrongLabel.transform = CGAffineTransform(translationX: 0, y: -150)
+        }) { _ in
+            rightWrongLabel.removeFromSuperview()
         }
+        
         
         scoreLabel.text = "\(totalCorrect) / \(totalAnswered)"
     }
@@ -146,7 +226,6 @@ class GameViewController: BaseViewController {
         
         questionLabel.text = """
         What is...
-        
         \(firstNumber) \(gameMode.operatorString) \(secondNumber)
         """
     }
@@ -188,11 +267,15 @@ class GameViewController: BaseViewController {
     }
     
     
-    
     @IBAction func tapAnswer(_ sender: UIButton) {
         let selectedAnswer = answerArray[sender.tag]
         
         check(selectedAnswer)
+        
+        if isRandomMode {
+            gameMode = GameMode.allCases.randomElement()!
+        }
+        
         updateQuestion()
         updateAnswers()
     }

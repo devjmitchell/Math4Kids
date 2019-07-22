@@ -21,27 +21,14 @@ class StartScreenViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        configureUI()
+        setupUI()
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        configureUI()
-    }
-    
-    
-    func configureUI() {        
+    func setupUI() {
         titleLabel.font = UIFont(name: FontNames.chalkduster, size: 80.0)
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.textColor = .white
-        
-        additionButton.configureAppearance(withSize: 50.0)
-        subtractionButton.configureAppearance(withSize: 50.0)
-        multiplicationButton.configureAppearance(withSize: 50.0)
-        divisionButton.configureAppearance(withSize: 50.0)
-        randomButton.configureAppearance(withSize: 50.0)
     }
     
 
@@ -58,6 +45,7 @@ class StartScreenViewController: BaseViewController {
         case 4:
             gameVC.gameMode = GameMode.division
         default:
+            gameVC.isRandomMode = true
             gameVC.gameMode = GameMode.allCases.randomElement()!
         }
         
