@@ -138,7 +138,7 @@ Kids</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vca-BO-U33">
-                                <rect key="frame" x="0.0" y="84" width="375" height="167"/>
+                                <rect key="frame" x="16" y="84" width="343" height="167"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -218,8 +218,8 @@ Kids</string>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Vca-BO-U33" firstAttribute="leading" secondItem="VeS-nq-ZmQ" secondAttribute="leading" id="0kD-1l-98t"/>
-                            <constraint firstItem="VeS-nq-ZmQ" firstAttribute="trailing" secondItem="Vca-BO-U33" secondAttribute="trailing" id="ADm-jM-zwx"/>
+                            <constraint firstItem="Vca-BO-U33" firstAttribute="leading" secondItem="VeS-nq-ZmQ" secondAttribute="leading" constant="16" id="0kD-1l-98t"/>
+                            <constraint firstItem="VeS-nq-ZmQ" firstAttribute="trailing" secondItem="Vca-BO-U33" secondAttribute="trailing" constant="16" id="ADm-jM-zwx"/>
                             <constraint firstItem="VeS-nq-ZmQ" firstAttribute="trailing" secondItem="NeN-er-jAJ" secondAttribute="trailing" id="BTp-p2-CyV"/>
                             <constraint firstItem="VeS-nq-ZmQ" firstAttribute="trailing" secondItem="auc-Ng-bPI" secondAttribute="trailing" constant="16" id="EEx-we-4xT"/>
                             <constraint firstItem="Vca-BO-U33" firstAttribute="top" secondItem="Mlj-ny-cCm" secondAttribute="bottom" constant="8" id="F04-hM-z7q"/>
