@@ -83,7 +83,7 @@ class GameViewController: BaseViewController {
         
         hideGameButtons()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.showGame()
         }
     }
@@ -185,12 +185,13 @@ class GameViewController: BaseViewController {
         rightWrongLabel.textAlignment = .center
         rightWrongLabel.textColor = rightWrongColor
         rightWrongLabel.font = UIFont(name: FontNames.chalkduster, size: 80.0)
+        rightWrongLabel.shadowColor = .white
         rightWrongLabel.adjustsFontSizeToFitWidth = true
         rightWrongLabel.text = rightWrongText
         rightWrongLabel.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         view.addSubview(rightWrongLabel)
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 1, animations: {
             rightWrongLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
             rightWrongLabel.transform = CGAffineTransform(translationX: 0, y: -150)
         }) { _ in
