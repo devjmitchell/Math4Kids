@@ -16,10 +16,10 @@ enum GameMode: CaseIterable {
     
     var operatorString: String {
         switch self {
-        case .addition: return "+" // ➕
-        case .subtraction: return "-" // ➖
-        case .multiplication: return "x" // ✖️
-        case .division: return "÷" // ➗
+        case .addition: return "+"
+        case .subtraction: return "-"
+        case .multiplication: return "x"
+        case .division: return "÷"
         }
     }
 }
@@ -135,12 +135,6 @@ class GameViewController: BaseViewController {
     
     
     func endGame() {
-//        beginEndLabel.text = """
-//        You got
-//        \(totalCorrect) right
-//        out of
-//        \(totalAnswered) total questions!
-//        """
         beginEndLabel.text = """
         You got:
         \(totalCorrect) right
@@ -149,11 +143,8 @@ class GameViewController: BaseViewController {
         
         beginEndLabel.isHidden = false
         endOKButton.isHidden = false
-//        endOKButton.isEnabled = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            self.endOKButton.isHidden = false
-//            self.endOKButton.isEnabled = true
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [], animations: {
                 self.endOKButton.transform = .identity
             })
