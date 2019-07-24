@@ -10,12 +10,13 @@ import UIKit
 
 class StartScreenViewController: BaseViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var additionButton: UIButton!
-    @IBOutlet weak var subtractionButton: UIButton!
-    @IBOutlet weak var multiplicationButton: UIButton!
-    @IBOutlet weak var divisionButton: UIButton!
-    @IBOutlet weak var randomButton: UIButton!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var additionButton: UIButton!
+    @IBOutlet var subtractionButton: UIButton!
+    @IBOutlet var multiplicationButton: UIButton!
+    @IBOutlet var divisionButton: UIButton!
+    @IBOutlet var randomButton: UIButton!
+    @IBOutlet var quizTypeControl: UISegmentedControl!
     
     
     override func viewDidLoad() {
@@ -29,6 +30,8 @@ class StartScreenViewController: BaseViewController {
         titleLabel.font = UIFont(name: FontNames.chalkduster, size: 80.0)
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.textColor = .white
+        
+        quizTypeControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: FontNames.chalkduster, size: 17) as Any], for: .normal)
     }
     
 
@@ -47,6 +50,12 @@ class StartScreenViewController: BaseViewController {
         default:
             gameVC.isRandomMode = true
             gameVC.gameMode = GameMode.allCases.randomElement()!
+        }
+        
+        if quizTypeControl.selectedSegmentIndex == 0 {
+            gameVC.quizType = .timed
+        } else {
+            gameVC.quizType = .questionCount
         }
         
         present(gameVC, animated: true)

@@ -35,7 +35,7 @@ class CustomButton: UIButton {
 //        let shorterSideLength = frame.height < frame.width ? frame.height : frame.width
 //        layer.cornerRadius = shorterSideLength / 2
 //        let shorterSideLength = layer.frame.height < layer.frame.width ? layer.frame.height : layer.frame.width
-        self.layer.cornerRadius = 50
+        self.layer.cornerRadius = 30
 //        self.clipsToBounds = true
         
 //        self.setNeedsLayout()

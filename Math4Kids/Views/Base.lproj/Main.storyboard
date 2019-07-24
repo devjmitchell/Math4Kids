@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,13 +29,13 @@ Kids</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XDU-0c-Sbj" userLabel="Buttons Stack View">
-                                <rect key="frame" x="16" y="219" width="343" height="432"/>
+                                <rect key="frame" x="16" y="219" width="343" height="366"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qzH-dw-ia0" userLabel="Add/Subtract Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="133"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="111"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oF-AC-0pI" customClass="CustomButton" customModule="Math4Kids" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="133"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="111"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" title="+"/>
@@ -43,7 +44,7 @@ Kids</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-Ka-aZ7" customClass="CustomButton" customModule="Math4Kids" customModuleProvider="target">
-                                                <rect key="frame" x="179.5" y="0.0" width="163.5" height="133"/>
+                                                <rect key="frame" x="179.5" y="0.0" width="163.5" height="111"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" title="-"/>
@@ -54,10 +55,10 @@ Kids</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QmG-Ly-p1U" userLabel="Multiply/Divide Stack View">
-                                        <rect key="frame" x="0.0" y="149" width="343" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="127" width="343" height="111.5"/>
                                         <subviews>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0H6-Vn-2Vk" customClass="CustomButton" customModule="Math4Kids" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="133.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="111.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" title="x"/>
@@ -66,7 +67,7 @@ Kids</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qe-id-UnV" customClass="CustomButton" customModule="Math4Kids" customModuleProvider="target">
-                                                <rect key="frame" x="179.5" y="0.0" width="163.5" height="133.5"/>
+                                                <rect key="frame" x="179.5" y="0.0" width="163.5" height="111.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" title="÷"/>
@@ -77,7 +78,7 @@ Kids</string>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbI-ek-j3p" customClass="CustomButton" customModule="Math4Kids" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="298.5" width="343" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="254.5" width="343" height="111.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Random"/>
@@ -92,11 +93,25 @@ Kids</string>
                                     <constraint firstItem="KbI-ek-j3p" firstAttribute="centerX" secondItem="XDU-0c-Sbj" secondAttribute="centerX" id="Kub-wG-16A"/>
                                 </constraints>
                             </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qpH-M2-Vcd">
+                                <rect key="frame" x="16" y="601" width="343" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JO4-j1-xbc"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="1 Minute"/>
+                                    <segment title="10 Questions"/>
+                                </segments>
+                                <color key="tintColor" name="buttonGradientBottom"/>
+                            </segmentedControl>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="qpH-M2-Vcd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0aI-s4-iSH"/>
                             <constraint firstItem="EYz-Oh-fjg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HX4-F4-Nek"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qpH-M2-Vcd" secondAttribute="bottom" constant="16" id="ZkS-9U-S8i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qpH-M2-Vcd" secondAttribute="trailing" constant="16" id="at1-13-7QE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYz-Oh-fjg" secondAttribute="trailing" constant="16" id="bcu-gK-5zo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XDU-0c-Sbj" secondAttribute="bottom" constant="16" id="cN3-C5-BdM"/>
+                            <constraint firstItem="qpH-M2-Vcd" firstAttribute="top" secondItem="XDU-0c-Sbj" secondAttribute="bottom" constant="16" id="cN3-C5-BdM"/>
                             <constraint firstItem="EYz-Oh-fjg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="gL0-9G-y6f"/>
                             <constraint firstItem="XDU-0c-Sbj" firstAttribute="top" secondItem="EYz-Oh-fjg" secondAttribute="bottom" constant="16" id="gRX-Tb-0Pc"/>
                             <constraint firstItem="EYz-Oh-fjg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="mLc-7P-7Xd"/>
@@ -109,6 +124,7 @@ Kids</string>
                         <outlet property="additionButton" destination="9oF-AC-0pI" id="JLn-nc-hUb"/>
                         <outlet property="divisionButton" destination="3qe-id-UnV" id="OGj-jP-AdW"/>
                         <outlet property="multiplicationButton" destination="0H6-Vn-2Vk" id="61m-VK-lpF"/>
+                        <outlet property="quizTypeControl" destination="qpH-M2-Vcd" id="csD-Zd-qPa"/>
                         <outlet property="randomButton" destination="KbI-ek-j3p" id="OCN-3c-6zw"/>
                         <outlet property="subtractionButton" destination="Kpe-Ka-aZ7" id="JZZ-Eq-vqs"/>
                         <outlet property="titleLabel" destination="EYz-Oh-fjg" id="xgK-2F-NdR"/>
@@ -199,7 +215,7 @@ Kids</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 minute...  Go!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeN-er-jAJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeN-er-jAJ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -259,4 +275,9 @@ Kids</string>
             <point key="canvasLocation" x="840.79999999999995" y="-136.28185907046478"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="buttonGradientBottom">
+            <color red="0.098039215686274508" green="0.72549019607843135" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

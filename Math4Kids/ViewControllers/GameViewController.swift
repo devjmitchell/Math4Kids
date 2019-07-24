@@ -25,6 +25,12 @@ enum GameMode: CaseIterable {
 }
 
 
+enum QuizType {
+    case timed
+    case questionCount
+}
+
+
 class GameViewController: BaseViewController {
     
     // MARK: - Outlets
@@ -45,6 +51,7 @@ class GameViewController: BaseViewController {
     
     var isRandomMode = false
     var gameMode: GameMode = .addition
+    var quizType: QuizType = .timed
     
     var firstNumber = 0
     var secondNumber = 0
@@ -97,6 +104,21 @@ class GameViewController: BaseViewController {
         answer3Button.isHidden = true
         answer4Button.isHidden = true
         scoreLabel.isHidden = true
+        
+        switch quizType {
+        case .timed:
+            beginEndLabel.text = """
+            1 minute...
+            
+            Go!
+            """
+        case .questionCount:
+            beginEndLabel.text = """
+            10 questions...
+            
+            Good luck!
+            """
+        }
     }
     
     
@@ -127,9 +149,11 @@ class GameViewController: BaseViewController {
         
         answerArray = [answer1, answer2, answer3, answer4]
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 60) {
-            self.hideGameButtons()
-            self.endGame()
+        if quizType == .timed {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 60) {
+                self.hideGameButtons()
+                self.endGame()
+            }
         }
     }
     
@@ -263,6 +287,11 @@ class GameViewController: BaseViewController {
         let selectedAnswer = answerArray[sender.tag]
         
         check(selectedAnswer)
+        
+        if quizType == .questionCount && totalAnswered == 10 {
+            self.hideGameButtons()
+            self.endGame()
+        }
         
         if isRandomMode {
             gameMode = GameMode.allCases.randomElement()!
