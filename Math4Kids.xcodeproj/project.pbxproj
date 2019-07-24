@@ -144,6 +144,7 @@
 				TargetAttributes = {
 					96B62E3D21EBD3D80064E409 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -364,7 +365,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.devjm.Math4Kids;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -382,7 +383,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.devjm.Math4Kids;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
