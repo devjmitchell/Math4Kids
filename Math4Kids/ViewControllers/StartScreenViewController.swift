@@ -10,6 +10,7 @@ import UIKit
 
 class StartScreenViewController: BaseViewController {
     
+    #warning("Change all UIButton to CustomButton?")
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var additionButton: UIButton!
     @IBOutlet var subtractionButton: UIButton!

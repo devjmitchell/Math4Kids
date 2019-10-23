@@ -35,6 +35,7 @@ class GameViewController: BaseViewController {
     
     // MARK: - Outlets
     
+    #warning("Change all UIButton to CustomButton?")
     @IBOutlet var beginEndLabel: UILabel!
     @IBOutlet var endOKButton: CustomButton!
     @IBOutlet var quitButton: UIButton!
@@ -90,6 +91,7 @@ class GameViewController: BaseViewController {
         
         hideGameButtons()
         
+        #warning("Should I make this delay shorter, since people seem to think this screen needs to be tapped to go away?")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.showGame()
         }
